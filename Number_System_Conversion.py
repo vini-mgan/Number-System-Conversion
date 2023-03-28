@@ -1,14 +1,21 @@
 
 
-decimal = float(input("Decimal base number to be converted: "))
+number_o = input("Number to be converted: \n")
 
-base = int(input("Conversion base: "))
 
-integer = int(decimal)
 
-fraction = decimal - integer
+base_o = int(input("Original  base: \n"))
 
-if base == 2:
+base_d = int(input("Conversion base: \n"))
+
+
+#CONVERSION FROM DECIMAL TO BINARY
+
+if base_o == 10 and base_d == 2:
+
+    integer = int(number_o)
+
+    fraction = float(number_o) - integer
 
     #INTEGER PART CONVERSION
 
@@ -51,9 +58,15 @@ if base == 2:
 
     #PRINT RESULTS
 
-    print(f"{decimal} em decimal é igual a {mystring}.{mystring_fraction} em binário")
+    print(f"{number_o} em decimal é igual a {mystring}.{mystring_fraction} em binário")
 
-elif base == 8:
+#CONVERSION FROM DECIMAL TO OCTAL
+
+elif base_o == 10 and base_d == 8:
+
+    integer = int(number_o)
+
+    fraction = float(number_o) - integer
 
     #INTEGER PART CONVERSION
 
@@ -95,11 +108,17 @@ elif base == 8:
         octal_f_str += '' + octal_f_digit_str
 
 
-    print(f"{decimal} em decimal é igual a {octal_str}.{octal_f_str} em octal")
+    print(f"{number_o} em decimal é igual a {octal_str}.{octal_f_str} em octal")
 
-elif base == 16:
+#CONVERSION FROM DECIMAL TO HEXADECIMAL
 
-    #INTEGER PART CONVERSION
+elif base_o == 10 and base_d == 16:
+
+    integer = int(number_o)
+
+    fraction = float(number_o) - integer
+
+    #INTEGER CONVERSION
 
     hexa = []
 
@@ -139,7 +158,7 @@ elif base == 16:
         hexadigit_str = str(hexadigit)
         hexa_str += '' + hexadigit_str
 
-    #FRACTIONAL PART CONVERTION
+    #FRACTIONAL CONVERTION
 
     hexa_f = []
 
@@ -181,4 +200,46 @@ elif base == 16:
         hexa_f_digit_str = str(hexa_f_digit)
         hexa_f_str += '' + hexa_f_digit_str
 
-    print(f"{decimal} em decimal é igual a {hexa_str}.{hexa_f_str} em hexadecimal")
+    print(f"{number_o} em decimal é igual a {hexa_str}.{hexa_f_str} em hexadecimal")
+
+#CONVERSION FROM OTHER NUMBER SYSTEMS TO DECIMAL
+
+elif base_o != 10 and base_d == 10:
+
+
+    digit_list = [str(x) for x in number_o]
+
+    if base_o == 16:
+
+        for d in range(len(digit_list)):
+
+
+            if digit_list[d] == 'A':
+                digit_list[d] = '10'
+
+            elif digit_list[d] == 'B':
+                digit_list[d] = '11'
+
+            elif digit_list[d] == 'C':
+                digit_list[d] = '12'
+
+            elif digit_list[d] == 'D':
+                digit_list[d] = '13'
+
+            elif digit_list[d] == 'E':
+                digit_list[d] = '14'
+
+            elif digit_list[d] == 'F':
+                digit_list[d] = '15'
+
+    digit_list = digit_list[::-1]
+
+    number_d = 0
+
+    for p in range(len(digit_list)):
+
+        digit_list[p] = int(digit_list[p])
+
+        number_d = number_d + digit_list[p] * base_o**p
+
+    print (f"{number_d}")
