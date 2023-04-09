@@ -1,8 +1,9 @@
 # Number-System-Conversion
 Convert between the decimal, binary, hexadecimal, and octal number systems.
 
-Bear in mind this is an ongoing and unfinished project. 
+Receive the user's input for the original number, as well as the original and destination number bases, and output the converted value.
 
-I intend the final product to be able to receive the user's input for the original value, as well as the current and target number bases, and to output the converted value.
+TODO:
 
-Floating point numbers are accepted.
+- Make it possible to input floating-point number to be converted
+- Add a GUI
