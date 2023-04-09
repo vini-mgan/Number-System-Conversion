@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d273fb59-71d8-405d-9e92-8ce4bfb977b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/Number_System_Conversion.py" beforeDir="false" afterPath="$PROJECT_DIR$/Number_System_Conversion.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/binary_hexadecimal_octal_conversion.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/conversor_decimal.py" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -30,7 +28,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Plotting_Graphs" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../learning" />
   </component>
   <component name="RunManager" selected="Python.Number_System_Conversion">
     <configuration name="Number_System_Conversion" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
@@ -96,10 +94,10 @@
     <servers />
   </component>
   <component name="WindowStateProjectService">
-    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1680024129798">
+    <state x="549" y="167" key="FileChooserDialogImpl" timestamp="1680200752651">
       <screen x="0" y="0" width="1536" height="824" />
     </state>
-    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1680024129798" />
+    <state x="549" y="167" key="FileChooserDialogImpl/0.0.1536.824@0.0.1536.824" timestamp="1680200752651" />
     <state width="1537" height="768" key="GridCell.Tab.0.bottom" timestamp="1680034649035">
       <screen x="0" y="0" width="1536" height="824" />
     </state>

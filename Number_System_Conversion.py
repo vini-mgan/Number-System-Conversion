@@ -33,6 +33,29 @@ def hexa():
             elif digit_list[d] == 'F':
                 digit_list[d] = '15'
 
+    elif base_o ==10 and base_d == 16:
+
+        for a in range(len(digit_list)):
+
+            if digit_list[a] == 10:
+                digit_list[a] = 'A'
+
+            elif digit_list[a] == 11:
+                digit_list[a] = 'B'
+
+            elif digit_list[a] == 12:
+                digit_list[a] = 'C'
+
+            elif digit_list[a] == 13:
+                digit_list[a] = 'D'
+
+
+            elif digit_list[a] == 14:
+                digit_list[a] = 'E'
+
+            elif digit_list[a] == 15:
+                digit_list[a] = 'F'   
+
 
 def naming(base):
 
@@ -55,11 +78,26 @@ if base_d == base_o:
 
 elif base_o == 10:
 
-    digit_list = [int(x) for x in str(number_o)]
+    decimal = int(number_o)
 
-    for p in range(len(digit_list)):
+    digit_list = []
 
-        number_d = number_d + digit_list[p]*base_o**p
+    while decimal != 0:
+
+        digit_list.append(decimal%base_d)
+
+        decimal = int( (decimal - decimal%base_d)/16 )
+
+    digit_list = digit_list[::-1]
+
+    hexa()
+
+    number_d = ''
+
+    for digit in digit_list:
+        digitstring = str(digit)
+        number_d += '' + digitstring
+
 
     naming(base_d)
 
@@ -72,7 +110,6 @@ elif base_o != 10 and base_d == 10:
 
     digit_list = [str(x) for x in number_o]
 
-    hexa()
 
     digit_list = digit_list[::-1]
 
@@ -114,6 +151,8 @@ elif base_o != 10 and base_d != 10:
     digit_list_d = []
 
     while decimal > 0:
+ 
+        hexa()
 
         digit_list_d.append(decimal%base_d)
 
