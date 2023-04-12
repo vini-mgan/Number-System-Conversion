@@ -1,10 +1,41 @@
-
+#NUMBER SYSTEM CONVERSOR
+#Vinícius Martins Galindo Andrade
 
 number_o = input("Number to be converted: \n")
 
-number_d = 0
-
 base_o = int(input("Original  base: \n"))
+
+digit_list = [str(x) for x in number_o]
+
+digit_list = digit_list[::-1]
+
+#Searching for invalid inputs
+
+bin_value = ['0', '1']
+octa_values = ['0', '1', '2', '3', '4', '5', '6', '7']
+hexa_values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
+
+for digit in digit_list:
+
+    if base_o == 2 and digit not in bin_value:
+
+        print(f"{digit} isn't a valid algarism for a decimal number")
+
+        exit()
+
+    elif base_o == 8 and digit not in octa_values:
+
+        print(f"{digit} isn't a valid algarism for an octal number")
+
+        exit()
+
+    elif  base_o == 16 and digit not in hexa_values:
+
+        print(f"{digit} isn't a valid algarism for an hexadecimal number")
+
+        exit()
+
+number_d = 0
 
 base_d = int(input("Conversion base: \n"))
 
@@ -71,8 +102,16 @@ def naming(base):
         base_name = "hexadecimal"
 
 
+#IN CASE THE BASES ARE THE SAME
+
 if base_d == base_o:
     print("\nAs bases são iguais")
+
+#IN CASE THE BASES ARE NOT SUPORTED
+
+elif base_o != 10 != 2 != 16 != 8 or base_d != 10 != 2 != 16 != 8:
+
+    print("\nInput inválido. Apenas conversões entre decimal, hexadecimal, binário e octal")
 
 #CONVERSION FROM DECIMAL TO OTHER NUMBER SYSTEMS
 
@@ -108,10 +147,7 @@ elif base_o == 10:
 
 elif base_o != 10 and base_d == 10:
 
-    digit_list = [str(x) for x in number_o]
-
-
-    digit_list = digit_list[::-1]
+    hexa()
 
     for p in range(len(digit_list)):
 
@@ -129,11 +165,7 @@ elif base_o != 10 and base_d == 10:
 
 elif base_o != 10 and base_d != 10:
 
-    digit_list = [str(x) for x in str(number_o)]
-
     hexa()
-
-    digit_list = digit_list [::-1]
 
     #conversion to decimal
 
@@ -175,7 +207,3 @@ elif base_o != 10 and base_d != 10:
     naming(base_d)
            
     print(f"{number_d} em {base_name}")
-
-
-else:
-    print("\nInput inválido. Apenas conversões entre decima, hexadecimal, binário e octal")
