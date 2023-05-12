@@ -1,15 +1,59 @@
 #NUMBER SYSTEM CONVERSOR
 #Vinícius Martins Galindo Andrade
 
-number_o = input("Number to be converted: \n")
+from tkinter import *
+ 
+#Defining the button command
 
-base_o = int(input("Original  base: \n"))
+def retrieve():
+    global number_o
+    global base_o
+    global base_d
+    number_o = entry1.get()
+    base_o = int(entry2.get())
+    base_d = int(entry3.get())
+    
+#Setting window and receiving inputs
+
+root = Tk()
+#root.geometry("400x400")
+root.title("Conversor entre sistemas numericos")
+
+frame = Frame(root)
+frame.pack()
+
+label1 = Label(frame, text = "Insert the value to convert")
+label1.pack()
+
+entry1 = Entry(frame, width = 20)
+entry1.insert(0, 'Number')
+entry1.pack(padx=5, pady=5)
+
+label2 = Label(frame, text = "Insert the original number system")
+label2.pack()
+
+entry2 = Entry(frame, width = 20)
+entry2.insert(0, 'Original Base')
+entry2.pack(padx=5, pady=5)
+
+label3 = Label(frame, text = "Insert the destiny number system")
+label3.pack()
+
+entry3 = Entry(frame, width = 20)
+entry3.insert(0, 'Conversion Base')
+entry3.pack(padx=5, pady=5)
+
+Button = Button(frame, text = "Submit", command = retrieve)
+Button.pack(padx = 5, pady = 5)
+
+root.eval('tk::PlaceWindow . center')
+root.mainloop()
+
+#Searching for invalid inputs
 
 digit_list = [str(x) for x in number_o]
 
 digit_list = digit_list[::-1]
-
-#Searching for invalid inputs
 
 bin_value = ['0', '1']
 octa_values = ['0', '1', '2', '3', '4', '5', '6', '7']
@@ -37,7 +81,7 @@ for digit in digit_list:
 
 number_d = 0
 
-base_d = int(input("Conversion base: \n"))
+#Function for the treatment of decimal values
 
 def hexa():
 
@@ -87,6 +131,7 @@ def hexa():
             elif digit_list[a] == 15:
                 digit_list[a] = 'F'   
 
+#Function for defining the number system name
 
 def naming(base):
 
@@ -101,17 +146,10 @@ def naming(base):
     elif base == 16:
         base_name = "hexadecimal"
 
-
 #IN CASE THE BASES ARE THE SAME
 
 if base_d == base_o:
     print("\nAs bases são iguais")
-
-#IN CASE THE BASES ARE NOT SUPORTED
-
-elif base_o != 10 != 2 != 16 != 8 or base_d != 10 != 2 != 16 != 8:
-
-    print("\nInput inválido. Apenas conversões entre decimal, hexadecimal, binário e octal")
 
 #CONVERSION FROM DECIMAL TO OTHER NUMBER SYSTEMS
 
