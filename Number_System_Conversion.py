@@ -11,6 +11,8 @@ digit_list = digit_list[::-1]
 
 #Searching for invalid inputs
 
+bases = [2, 8, 10, 16]
+
 bin_value = ['0', '1']
 octa_values = ['0', '1', '2', '3', '4', '5', '6', '7']
 hexa_values = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', 'A', 'B', 'C', 'D', 'E', 'F']
@@ -109,7 +111,7 @@ if base_d == base_o:
 
 #IN CASE THE BASES ARE NOT SUPORTED
 
-elif base_o != 10 != 2 != 16 != 8 or base_d != 10 != 2 != 16 != 8:
+elif base_o not in bases or base_d not in bases:
 
     print("\nInput inválido. Apenas conversões entre decimal, hexadecimal, binário e octal")
 
